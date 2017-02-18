@@ -1,0 +1,59 @@
+/* -----------------------------------
+	Media CSS by Tristan Mastrodicasa
+
+	media.css
+
+	This file deals with the styling 
+	for media uploaded by the user. This
+	is mainly for the profile picture and/or 
+	post content
+----------------------------------- */
+
+/* Profile Picture Definitions */
+/* Tiny : 30px; Small : 38px; Medium : 48px; Large : 150px; */
+
+.m-prof-pic-tiny {
+	width: 30px;
+	height: 30px;
+}
+.m-prof-pic-small {
+	width: 38px;
+	height: 38px;
+}
+.m-prof-pic-medium {
+	width: 48px;
+	height: 48px;
+}
+.m-prof-pic-large {
+	width: 150px;
+	height: 150px;
+}
+.m-prof-pic-large-c {
+	position: relative;
+	z-index: 1;
+	
+	/* Standard */
+	background-image: url("http://localhost/plink/resources/images/placeholder/default-medium.png");
+}
+
+/* Open Graph Media */
+
+.m-open-graph-b-img {
+	max-width: 100%;
+}
+
+/* Post Image / Video */
+
+.m-post-media {
+	max-height: 750px;
+	max-width: 100%;
+}
+
+iframe.m-post-media { 
+	width: 100%;
+}
+
+/* Rid of background transparency */
+.m-white-back {
+	background-color: #FFFFFF;
+}

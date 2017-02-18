@@ -1,0 +1,149 @@
+/* -----------------------------------
+	Button CSS by Tristan Mastrodicasa
+
+	button.css
+
+	This file standardises the different
+	buttons for Plink (publish, save, etc)
+----------------------------------- */
+
+/* Site Navigation */
+
+.page-navigation {
+	cursor: pointer;
+}
+
+/* Portal Submit */
+
+.b-portal-sumbit { 
+	min-width: 86px;
+	
+	text-align: center;
+	font-size: 18px;
+	padding: 10px;
+	cursor: pointer;
+	background-color: #FFFFFF;
+}
+
+/* Standard Buttons */
+
+.b-black-white { 
+	height: 30px;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #FFFFFF;
+	border: 1px solid #AAB8C2;
+	border-radius: 2px;
+}
+
+/* Post Action Buttons */
+
+.b-post-action {
+	height: 23px;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+}
+.b-post-action:focus {
+	outline: 0;
+}
+.b-post-action > div {
+	display: inline;
+	float: left;
+}
+.b-post-action > span {
+	display: inline;
+	float: left;
+	margin-left: 5px;
+	margin-top: 4px;
+	
+	color: #999999;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/* CSS button animation */
+
+.post-E:focus div {
+	background-image: url("http://222.153.11.66/resources/images/buttons/endorsed.png");
+}
+.post-R:focus div {
+	background-image: url("http://222.153.11.66/resources/images/buttons/reposted.png");
+}
+
+/* Profile Action Buttons */
+
+.b-profile-button {
+	display: inline-block;
+	height: 40px;
+	padding: 5px;
+	margin-top: 10px;
+	outline: 0;
+	
+	font-size: 15px;
+	color: #FF751A;
+	background-color: #FFFFFF;
+	border: 1px solid #FF751A;
+	border-radius: 1px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.b-profile-button:hover {
+	background-color: #FF751A;
+	color: #FFFFFF;
+}
+.b-profile-button > div {
+	display: inline-block;
+	float: right;
+}
+
+.b-profile-action {
+	background-color: #FF751A;
+	color: #FFFFFF;
+}
+.b-profile-action > div {
+	background-image: url("http://222.153.11.66/resources/images/buttons/ticked.png");
+}
+.b-profile-action:hover > div {
+	background-color: #FF751A;
+	color: #FFFFFF;
+	background-image: url("http://222.153.11.66/resources/images/buttons/unticked.png");
+}
+
+/* Orange White */
+
+.b-orange-white { 
+	height: 30px;
+	
+	font-size: 15px;
+	color: #FFFFFF;
+	background-color: #FF751A;
+	border: 1px solid #FF751A;
+	cursor: pointer;
+}
+
+/* White Black */
+
+.b-white-black { 
+	height: 30px;
+	
+	font-size: 15px;
+	color: #000000;
+	background-color: #CCCCCC;
+	border: 1px solid #CCCCCC;
+	cursor: pointer;
+}
+
+/* Clear button to be mixed with a background image */
+
+.b-clear { 
+	display: block;
+	padding: 0;
+	margin: 0;
+	
+	border-width: 0;
+	background: none;
+	cursor: pointer;
+}
+.b-clear:focus { outline: 0; }

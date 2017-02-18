@@ -1,0 +1,36 @@
+<script>
+		
+//--------------------------------------------------
+
+/* Globals are defined below */
+/* They will be used as containers for changing events on the webpage or
+ * act as containers for system wide information */
+
+//--------------------------------------------------
+
+// Event Trackers //
+var sysTrack = { 
+	profileUserId : {{{ uid }}}, // User id
+	profileUserPic : '{{{ propic }}}', // User Profile Pic (tiny)
+	refUsername : '', // The username to be used for the level up notification url
+	mobile : 0, // Trackes whether the browser is via mobile
+	currentLoadedUser : 0,
+	currentLayer : 1, // Post Layer is default
+	currentSubLayer : 0, // No sublayer in post layer
+	currentPubOp : 0, // The current publish option
+	blurbCharWatch : 0, // 1 means it is over 150 char
+	pubErrorStatus : 0, // 1 means there is an error
+	scrollLoad : true, // Disables or enables the scroll load
+	pidToBeDel : 0, // Pid to be confirmed to be deleted
+	pidToBeEdit : 0, // Pid to be confirmed to be edited
+	pidToBeRep : 0, // Pid to be confirmed to be reported
+	pidEditActive : 0, // Pid which is currently being edited
+	activeSearchQ : '', // The current query being searched
+	firstHashId : 0, // The id of the first hash to be sent
+	searchActive : 0, // If the user is using mobile this var will detect if the search bar is deployed
+	mainScrollPosition : 0 // Scroll position for the main feed
+}
+
+//--------------------------------------------------
+
+</script>

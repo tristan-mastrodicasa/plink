@@ -1,0 +1,867 @@
+<!-- Search bar for mobile -->
+<div class="ly-top-mobile-search width-full no-display" id="mobile-search-bar">
+
+	<form onsubmit="animation.search.query($('#mobile-search').val()); return false;" class="width-height-full">
+	
+		<div class="in-mobile-search-c">
+		
+			<input type="text" name="search" placeholder="Search" class="in-top-nav-search font-15-5 width-height-full" id="mobile-search">
+			<input type="submit" class="no-display">
+		
+		</div>
+		
+	</form>
+	
+</div>
+<!-- *** -->
+
+<!-- FL1: Main Post Interface -->
+<div class="ly-focus-layer width-full block-display" data-focus-layer="1">
+
+	<div class="ly-card-deck center">
+	
+		<!-- Publishing Options -->
+		<div class="width-full">
+		
+			<div class="ly-publish-options-c left width-quarter selectable" data-pub-op="1">
+				<img src="../resources/images/post-options/post-option-article.png">
+			</div>
+			
+			<div class="ly-publish-options-c left width-quarter selectable" data-pub-op="2">
+				<img src="../resources/images/post-options/post-option-photo.png">
+			</div>
+			
+			<div class="ly-publish-options-c left width-quarter selectable" data-pub-op="3">
+				<img src="../resources/images/post-options/post-option-video.png">
+			</div>
+			
+			<div class="ly-publish-options-c left width-quarter selectable" data-pub-op="4">
+				<img src="../resources/images/post-options/post-option-blurb.png">
+			</div>
+			
+			<div class="clearfix"></div>
+		
+		</div>
+		<!-- *** -->
+		
+		<!-- Publishing Ui -->
+		<div class="width-full-mb-20">
+		
+			<!-- Containers for the selector triangle -->
+			<div class="width-full no-display" id="selector-triangles">
+		
+				<div class="ly-publish-options-c left width-quarter">
+					<span data-pub-tri="1"></span>
+				</div>
+				
+				<div class="ly-publish-options-c left width-quarter">
+					<span data-pub-tri="2"></span>
+				</div>
+				
+				<div class="ly-publish-options-c left width-quarter">
+					<span data-pub-tri="3"></span>
+				</div>
+				
+				<div class="ly-publish-options-c left width-quarter">
+					<span data-pub-tri="4"></span>
+				</div>
+				
+				<div class="clearfix"></div>
+		
+			</div>
+			<!-- *** -->
+			
+			<div class="ly-publish-ui no-display width-full" id="post-publish-ui">
+			
+				<div id="publish-form">
+			
+					<div class="border-box width-full padding-15" id="written-input">
+						<textarea name="text" id="textbox" placeholder="What did you want to say ..." class="in-large-text ly-text-area width-full t-post-content-text js-textbox"></textarea>
+					</div>
+					
+					<div class="no-display" id="image-input">
+					
+						<div class="border-box width-full padding-15 ly-picture-video">
+							<form method="POST" enctype="multipart/form-data" target="upload_target" id="img-form">
+								<input type="file" name="imageSrc" id="image-src" accept="image/*">
+								<input type="hidden" name="written" id="img-desc">
+								<input type="hidden" name="topic" id="img-top">
+								<input type="hidden" name="type" id="img-type">
+								<input type="hidden" name="imageUrl" id="img-link">
+							</form>
+							
+							<iframe id="upload_target" name="upload_target" class="no-display"></iframe>
+						</div>
+						
+						<div class="border-box width-full padding-15 ly-picture-video">
+							<input type="text" placeholder="Or enter image link" class="in-small-text-nb t-post-content-text width-full" id="image-url-input">
+						</div>
+						
+					</div>
+					
+					<div class="ly-picture-video border-box width-full padding-15 no-display" id="video-input-c">
+						<input type="text" placeholder="YouTube Link" class="in-small-text-nb t-post-content-text width-full" id="video-input">
+					</div>
+					
+					<div class="ly-red-border ly-publish-error width-full no-display nb-right nb-left nb-bottom" id="error-message">
+						<p id="error-message-text" class="t-error-text-publish"></p>
+					</div>
+					
+					<div class="border-box width-full ly-border-grey padding-10 nb-right nb-left nb-bottom" id="submit-container">
+						
+						<div class="ly-publish-half">
+							<input type="hidden" name="upload-type" id="upload-type" value="0">
+							<input type="button" onclick="applet.publishUI.submit($('#publish-form'))" id="publish-submit" value="Publish" class="b-black-white right">
+							
+							<span id="blurb-character-counter" class="t-char-counter no-display height-full right ly-publish-char-counter">150</span>
+							<img src="../resources/images/misc/publish-loader.gif" id="publish-loading-sign" class="right no-display">
+						</div>
+						
+						<div class="ly-publish-half">
+						
+							<select name="topic" id="publish-topic-chooser" class="in-selection ly-max-width-100">
+								<option value="n">Topic</option>
+								<option value="ap">Animals and Pets</option>
+								<option value="ac">Arts and Crafts</option>
+								<option value="c">Computers</option>
+								<option value="e">Entertaiment</option>
+								<option value="f">Fashion</option>
+								<option value="fc">Food and Cooking</option>
+								<option value="fg">Friends and Gatherings</option>
+								<option value="fu">Funny</option>
+								<option value="g">Games</option>
+								<option value="hf">Health and Fitness</option>
+								<option value="hc">History and Culture</option>
+								<option value="lo">Lifestyle and Opinions</option>
+								<option value="m">Memes</option>
+								<option value="mu">Music</option>
+								<option value="ne">Nature and Environment</option>
+								<option value="o">Other</option>
+								<option value="st">Science and Tech</option>
+								<option value="sp">Sports</option>
+								<option value="t">Travel</option>
+								<option value="tm">Tv and Movies</option>
+								<option value="wn">World and News</option>
+							</select>
+							
+							<select name="topic" id="publish-topic-chooser-blurb" class="in-selection width-full no-display" style="max-width:195px;">
+								<option value="s">Blurb</option>
+							</select>
+						
+						</div>
+						
+						<div class="clearfix"></div>
+						
+					</div>
+					
+				</div>
+			
+			</div>
+		
+		</div>
+		<!-- *** -->
+		
+		<div class="width-full-mb-20">
+		
+			<div class="post-insertion-container">
+			
+				
+				
+			</div>
+			
+			<div class="width-full">
+				<img src="../resources/images/misc/post-loader.gif" class="center" id="m-loader">
+				<h3 class="font-20 center-text mp-reset no-display" id="m-end">No more posts to show</h3>
+			</div>
+		
+		</div>
+		
+	</div>
+	
+</div>
+<!-- *** -->
+
+<!-- FL2: Profile Interface -->
+<div class="ly-focus-layer width-full no-display" data-focus-layer="2">
+
+	<div class="ly-card-deck center">
+		
+		<!-- Profile Loader -->
+		<div class="width-full" id="profile-loader">
+			<img src="../resources/images/misc/post-loader.gif" class="center">
+		</div>
+		
+		<div id="profile-card">
+			<!-- Profile -->
+			<div class="width-full-mb-20">
+			
+				<div class="ly-profile border-box ly-standard-border">
+				
+					<div class="width-full-mb-10">
+						
+						<div class="ly-profile-prof-pic m-prof-pic-large center ly-standard-border">
+						
+							<div id="profile-layer-picture" class="m-prof-pic-large-c width-height-full">
+							
+								<div class="ly-prof-overlay width-height-full no-display" id="propic-overlay">
+									
+									<div class="ic-change-prof" id="profpic-select"></div>
+									<div class="padding-25 no-display" id="profpic-load"><div class="ic-pro-load center"></div></div>
+									
+									<form method="POST" enctype="multipart/form-data" target="upload_propic" id="propic-form">
+										<input type="file" name="imageSrc" id="propic-src" class="no-display" accept="image/*">
+									</form>
+									
+									<iframe id="upload_propic" name="upload_propic" class="no-display"></iframe>
+								</div>
+								
+								<div class="width-height-full padding-10 border-box no-display" id="propic-confirm">
+									<div class="ly-prof-confirm left ly-image-fill-center-c" id="prof-conf"><div class="ic-confirm ly-image-fill-center-img"></div></div>
+									<div class="ly-prof-confirm right ly-image-fill-center-c" id="prof-deny"><div class="ic-deny ly-image-fill-center-img"></div></div>
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+					
+					<div class="width-full center-text">
+						<a href="#2:1" class="t-invisible-link page-navigation profile-links" data-callback="profile">
+							<span id="profile-layer-name" class="font-30"></span>
+						</a>
+					</div>
+						
+					<div class="width-full">
+						
+						<div id="profile-layer-private-buttons">
+							<a href="#2:2" class="page-navigation t-invisible-link" data-callback="profileAnalyse">
+								<button class="b-profile-button">Profile Analysis</button>
+							</a>
+							
+							<a href="#2:3" class="page-navigation t-invisible-link" data-callback="subscriptions">
+								<button class="b-profile-button">Subscriptions</button>
+							</a>
+							
+							<a href="#2:4" class="page-navigation t-invisible-link" data-callback="likedPosts">
+								<button class="b-profile-button">Liked Posts</button>
+							</a>
+							
+							<a href="#2:5" class="page-navigation t-invisible-link">
+								<button class="b-profile-button">Settings</button>
+							</a>
+						</div>
+						
+						<div id="profile-layer-public-buttons" data-uid="0">
+							<button class="b-profile-button" id="prof-subscribe" data-com="0" onclick="applet.profile.subscribe(this)">Subscribe</button>
+							<button class="b-profile-button" id="prof-admire" data-com="0" onclick="applet.profile.admire(this)">Admire</button>
+						</div>
+						
+					</div>
+				
+				</div>
+				
+			</div>
+			<!-- *** -->
+				
+			<!-- User Details/Posts -->
+			<div class="width-full no-display" data-sub-focus-layer="1">
+				
+				<div class="width-full-mb-20">
+			
+					<div class="card ly-standard-border">
+				
+						<div class="width-full">
+							
+							<div class="ic-xp-ring-medium left" id="profile-layer-level-back">
+								<span id="profile-layer-level"></span>
+							</div>
+					
+							<div class="ly-xp-display">
+								<span class="t-profile-level block-display width-full" id="profile-layer-xp"></span>
+								<span class="t-profile-level block-display width-full" id="profile-layer-xp-tg"></span>
+							</div>
+							
+							<div class="clearfix"></div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<div class="width-full-mb-20">
+				
+					<div class="card ly-standard-border">
+					
+						<div class="ly-fe-profile-info font-15">
+							
+							<div class="ly-fe-profile-info-line">
+								<span id="user-join-date"><b>Joined:</b></span>
+							</div>
+							
+							<div class="ly-fe-profile-info-line">
+								<span id="user-login-date"><b>Last Login:</b></span>
+							</div>
+							
+							<div class="ly-fe-profile-info-line">
+								<span id="user-topic-majority"><b>Topic:</b></span>
+							</div>
+							
+							<div class="clearfix"></div>
+							
+						</div>
+						
+						<hr class="ly-fe-seperator">
+					
+						<div class="ly-fe-profile-stats border-box">
+								
+							<div class="width-full ly-stat-lines">
+								
+								<span class="ic-subscribe left"></span>
+								
+								<div class="ly-stat-num center-text right">
+									<span id="profile-public-stat-sub" class="t-char-counter">0</span>
+								</div>
+								
+								<div class="ly-stat-desc">
+									<span class="font-20">Subscribers</span>
+								</div>
+								
+								<div class="clearfix"></div>
+								
+							</div>
+							
+							<div class="width-full ly-stat-lines">
+								
+								<span class="ic-admire left"></span>
+								
+								<div class="ly-stat-num center-text right">
+									<span id="profile-public-stat-adm" class="t-char-counter">0</span>
+								</div>
+								
+								<div class="ly-stat-desc">
+									<span class="font-20">Admirations</span>
+								</div>
+								
+								<div class="clearfix"></div>
+								
+							</div>
+							
+							<div class="width-full ly-stat-lines">
+								
+								<span class="ic-endorsement left"></span>
+								
+								<div class="ly-stat-num center-text right">
+									<span id="profile-public-stat-end" class="t-char-counter">0</span>
+								</div>
+								
+								<div class="ly-stat-desc">
+									<span class="font-20">Endorsements</span>
+								</div>
+								
+								<div class="clearfix"></div>
+								
+							</div>
+							
+							<div class="width-full ly-stat-lines">
+								
+								<span class="ic-post left"></span>
+								
+								<div class="ly-stat-num center-text right">
+									<span id="profile-public-stat-pst" class="t-char-counter">0</span>
+								</div>
+								
+								<div class="ly-stat-desc">
+									<span class="font-20">Posts</span>
+								</div>
+								
+								<div class="clearfix"></div>
+								
+							</div>
+						
+						</div>
+					
+						<div class="clearfix"></div>
+						
+					</div>
+				
+				</div>
+				
+				<div class="width-full-mb-20">
+				
+					<div class="post-insertion-container">
+						
+					</div>
+					
+					<div class="width-full">
+						<img src="../resources/images/misc/post-loader.gif" class="center" id="profile-post-loader">
+						<h3 class="font-20 center-text mp-reset no-display" id="profile-post-end">End of results</h3>
+					</div>
+					
+				</div>
+					
+			</div>
+			<!-- *** -->
+		</div>
+		
+		<!-- Profile Analysis -->
+		<div class="width-full no-display" data-sub-focus-layer="2">
+				
+			<div class="width-full-mb-20">
+				
+				<div class="card ly-standard-border">
+					
+					<div class="width-full-mb-20 center-text">
+						<b class="font-23">Profile Statistics</b>
+					</div>
+				
+					<div class="width-full">
+				
+						<div class="ly-statlet mb-20 left">
+								
+							<div class="width-full-mb-10">
+								<abbr title="Views" class="ic-seen center"></abbr>
+							</div>
+							
+							<p class="mp-reset center-text font-18" id="pa-prof-seen">0</p>
+						
+						</div>
+					
+						<div class="ly-statlet mb-20 left">
+					
+							<div class="width-full-mb-10">
+								<abbr title="Subscribers" class="ic-subscribe center"></abbr>
+							</div>
+							
+							<p class="mp-reset center-text font-18" id="pa-prof-sub">0</p>
+						
+						</div>
+						
+						<div class="ly-statlet mb-20 left">
+						
+							<div class="width-full-mb-10">
+								<abbr title="Admirations" class="ic-admire center"></abbr>
+							</div>
+							
+							<p class="mp-reset center-text font-18" id="pa-prof-adm">0</p>
+						
+						</div>
+						
+						<div class="ly-statlet mb-20 left">
+					
+							<div class="width-full-mb-10">
+								<abbr title="Posts" class="ic-post center"></abbr>
+							</div>
+							
+							<p class="mp-reset center-text font-18" id="pa-prof-posts">0</p>
+						
+						</div>
+						
+						<div class="clearfix"></div>
+						
+					</div>
+					
+					<div class="width-full-mb-20 center-text">
+						<b class="font-23">Post Statistics</b>
+					</div>
+				
+					<div class="width-full">
+					
+						<div class="ly-statlet mb-20-toggle left">
+						
+							<div class="width-full-mb-10">
+								<abbr title="Views" class="ic-seen center"></abbr>
+							</div>
+							
+							<p class="mp-reset center-text font-18" id="pa-post-seen">0</p>
+							
+						</div>
+					
+						<div class="ly-statlet mb-20-toggle left">
+					
+							<div class="width-full-mb-10">
+								<abbr title="Endorsements" class="ic-endorsement center"></abbr>
+							</div>
+							
+							<p class="mp-reset center-text font-18" id="pa-post-end">0</p>
+						
+						</div>
+						
+						<div class="ly-statlet left">
+						
+							<div class="width-full-mb-10">
+								<abbr title="Reposts" class="ic-repost center"></abbr>
+							</div>
+							
+							<p class="mp-reset center-text font-18" id="pa-post-rep">0</p>
+						
+						</div>
+						
+						<div class="ly-statlet left">
+					
+							<div class="width-full-mb-10">
+								<abbr title="Comments" class="ic-comment center"></abbr>
+							</div>
+							
+							<p class="mp-reset center-text font-18" id="pa-post-com">0</p>
+						
+						</div>
+						
+						<div class="clearfix"></div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			<div class="width-full-mb-20">
+			
+				<div class="post-insertion-container">
+					
+				</div>
+				
+				<div class="width-full">
+					<img src="../resources/images/misc/post-loader.gif" class="center" id="pa-loader">
+					<h3 class="font-20 center-text mp-reset no-display" id="pa-end">End of results</h3>
+				</div>
+				
+			</div>
+			
+		</div>
+		<!-- *** -->
+
+		<!-- Subscriptions -->
+		<div class="width-full no-display" data-sub-focus-layer="3">
+			
+			<div class="width-full-mb-20">
+		
+				<div class="card ly-standard-border">
+					
+					<form onsubmit="dataHandler.scrollEngine('sb', true); return false;">
+					
+						<div class="width-full-mb-15">
+						
+							<div class="width-half left">
+							
+								<select name="topic" class="in-selection border-box ly-max-width-80 left" onchange="dataHandler.scrollEngine('sb', true)" id="sub-topic">
+									<option value="n">Topic</option>
+									<option value="ap">Animals and Pets</option>
+									<option value="ac">Arts and Crafts</option>
+									<option value="c">Computers</option>
+									<option value="e">Entertaiment</option>
+									<option value="f">Fashion</option>
+									<option value="fc">Food and Cooking</option>
+									<option value="fg">Friends and Gatherings</option>
+									<option value="fu">Funny</option>
+									<option value="g">Games</option>
+									<option value="hf">Health and Fitness</option>
+									<option value="hc">History and Culture</option>
+									<option value="lo">Lifestyle and Opinions</option>
+									<option value="m">Memes</option>
+									<option value="mu">Music</option>
+									<option value="ne">Nature and Environment</option>
+									<option value="o">Other</option>
+									<option value="st">Science and Tech</option>
+									<option value="sp">Sports</option>
+									<option value="t">Travel</option>
+									<option value="tm">Tv and Movies</option>
+									<option value="wn">World and News</option>
+								</select>
+								
+							</div>
+							
+							<div class="width-half left">
+								
+								<select name="sort-type" class="in-selection border-box ly-max-width-80 right" onchange="dataHandler.scrollEngine('sb', true)" id="sub-sort">
+									<option value="1">A-Z</option>
+									<option value="2">Newest Content</option>
+									<option value="3">Most Popular</option>
+								</select>
+								
+							</div>
+							
+							<div class="clearfix"></div>
+							
+						</div>
+						
+						<input type="text" name="search" placeholder="Search subscriptions" class="in-small-text border-box width-full" id="sub-query" onblur="dataHandler.scrollEngine('sb', true)">
+						<input type="submit" class="no-display">
+					
+					</form>
+					
+				</div>
+				
+			</div>
+			
+			<div class="width-full-mb-20">
+		
+				<div class="card ly-standard-border">
+					
+					<div class="sub-insertion-container">
+					
+					</div>
+				
+					<div class="width-full">
+						<img src="../resources/images/misc/post-loader.gif" class="center" id="sub-loader">
+						<h3 class="font-20 center-text mp-reset no-display" id="sub-end">End of results</h3>
+					</div>
+				
+				</div>
+				
+			</div>
+		
+		</div>
+		<!-- *** -->
+
+		<!-- Liked Posts -->
+		<div class="width-full no-display" data-sub-focus-layer="4">
+			
+			<div class="width-full-mb-20">
+		
+				<div class="card ly-standard-border">
+					
+					<div class="width-full">
+					
+						<div class="width-half left">
+							
+							<select name="topic" class="in-selection border-box ly-max-width-80 left" onchange="dataHandler.scrollEngine('l', true)" id="liked-topic">
+								<option value="n">Topic</option>
+								<option value="ap">Animals and Pets</option>
+								<option value="ac">Arts and Crafts</option>
+								<option value="c">Computers</option>
+								<option value="e">Entertaiment</option>
+								<option value="f">Fashion</option>
+								<option value="fc">Food and Cooking</option>
+								<option value="fg">Friends and Gatherings</option>
+								<option value="fu">Funny</option>
+								<option value="g">Games</option>
+								<option value="hf">Health and Fitness</option>
+								<option value="hc">History and Culture</option>
+								<option value="lo">Lifestyle and Opinions</option>
+								<option value="m">Memes</option>
+								<option value="mu">Music</option>
+								<option value="ne">Nature and Environment</option>
+								<option value="o">Other</option>
+								<option value="st">Science and Tech</option>
+								<option value="sp">Sports</option>
+								<option value="t">Travel</option>
+								<option value="tm">Tv and Movies</option>
+								<option value="wn">World and News</option>
+							</select>
+							
+						</div>
+						
+						<div class="width-half left">
+							
+							<select name="sort-type" class="in-selection border-box ly-max-width-80 right" onchange="dataHandler.scrollEngine('l', true)" id="liked-sort">
+								<option value="1">Newest to Oldest</option>
+								<option value="2">Oldest to Newest</option>
+								<option value="3">Most Popular</option>
+							</select>
+							
+						</div>
+						
+						<div class="clearfix"></div>
+						
+					</div>
+				
+				</div>
+				
+			</div>
+			
+			<div class="width-full-mb-20">
+			
+				<div class="post-insertion-container">
+					
+				</div>
+				
+				<div class="width-full">
+					<img src="../resources/images/misc/post-loader.gif" class="center" id="liked-loader">
+					<h3 class="font-20 center-text mp-reset no-display" id="liked-end">End of results</h3>
+				</div>
+				
+			</div>
+	
+		</div>
+		<!-- *** -->
+
+		<!-- Settings -->
+		<div class="width-full no-display" data-sub-focus-layer="5">
+		
+			<div class="width-full-mb-20">
+		
+				<div class="card ly-standard-border">
+					
+					<div class="width-full mt-5">
+					
+						<div class="width-half-full-toggle ly-set-line">
+							<span class="font-17">Change Username</span>
+							
+							<div id="u-i" class="no-display mt-15">
+								<span class="block-display ic-info-tiny ly-poster-repost mr-5 left"></span><p class="ly-setting-info block-display t-info-text-setting mp-reset width-90 left">Usernames can only be changed every 3 months</p>
+							</div>
+							
+						</div>
+						
+						<div class="width-half-full-toggle ly-set-line">
+							<input type="text" value="{{{ username }}}" class="width-90 border-box center-toggle ly-border-grey" id="u">
+							<p class="no-display t-error-text-setting mp-reset mt-15 width-full" id="u-m"></p>
+						</div>
+						
+						<div class="clearfix"></div>
+					
+					</div>
+					
+					<div class="width-full">
+					
+						<div class="width-half-full-toggle ly-set-line">
+							<span class="font-17">Change First Name</span>
+							
+							<div id="f-i" class="no-display mt-15">
+								<span class="block-display ic-info-tiny ly-poster-repost mr-5 left"></span><p class="ly-setting-info block-display t-info-text-setting mp-reset width-90 left">Name can only be changed every 3 months</p>
+							</div>
+						</div>
+						
+						<div class="width-half-full-toggle ly-set-line">
+							<input type="text" value="{{{ fname }}}" class="width-90 border-box center-toggle ly-border-grey" id="f">
+							<p class="no-display t-error-text-setting mp-reset mt-15 width-full" id="f-m"></p>
+						</div>
+						
+						<div class="clearfix"></div>
+					
+					</div>
+					
+					<div class="width-full">
+					
+						<div class="width-half-full-toggle ly-set-line">
+							<span class="font-17">Change Email</span>
+							
+							<div id="be-i" class="no-display mt-15">
+								<span class="block-display ic-info-tiny ly-poster-repost mr-5 left"></span><p class="ly-setting-info block-display t-info-text-setting mp-reset width-90 left">You must enter your current password to change</p>
+							</div>
+						</div>
+						
+						<div class="width-half-full-toggle ly-set-line">
+							<input type="text" value="{{{ bemail }}}" class="width-90 border-box center-toggle ly-border-grey" id="be">
+							<p class="no-display t-error-text-setting mp-reset mt-15 width-full" id="be-m"></p>
+						</div>
+						
+						<div class="clearfix"></div>
+					
+					</div>
+					
+					<div class="width-full">
+					
+						<div class="width-half-full-toggle ly-set-line">
+							<span class="font-17">New Password</span>
+						</div>
+						
+						<div class="width-half-full-toggle ly-set-line">
+							<input type="password" class="width-90 border-box center-toggle ly-border-grey" id="p">
+							<p class="no-display t-error-text-setting mp-reset mt-15 width-full" id="p-m"></p>
+						</div>
+						
+						<div class="clearfix"></div>
+					
+					</div>
+					
+					<div class="width-full">
+					
+						<div class="width-half-full-toggle ly-set-line">
+							<span class="font-17">Retype Password</span>
+						</div>
+						
+						<div class="width-half-full-toggle ly-set-line">
+							<input type="password" class="width-90 border-box center-toggle ly-border-grey" id="p2">
+							<p class="no-display t-error-text-setting mp-reset mt-15 width-full" id="p2-m"></p>
+						</div>
+						
+						<div class="clearfix"></div>
+					
+					</div>
+					
+					<div class="width-full">
+					
+						<div class="width-half-full-toggle ly-set-line">
+							<span class="font-17">Current Password</span>
+						</div>
+						
+						<div class="width-half-full-toggle ly-set-line">
+							<input type="password" class="width-90 border-box center-toggle ly-border-grey" id="po">
+							<p class="no-display t-error-text-setting mp-reset mt-15 width-full" id="po-m"></p>
+						</div>
+						
+						<div class="clearfix"></div>
+					
+					</div>
+					
+					<div class="width-full">
+						
+						<div class="ly-publish-half width-half-full-toggle center-toggle">
+						
+							<div class="ly-set-button center-toggle">
+								<img src="../resources/images/misc/tick.png" id="setting-saved-sign" class="ly-set-button right no-display">
+								<input type="submit" value="Save Changes" id="ss" class="b-black-white ly-set-button right" onclick="applet.profile.settings()">
+								<div class="clearfix"></div>
+							</div>
+							
+						</div>
+						
+						<div class="ly-publish-half width-half-full-toggle center-toggle">
+							<p class="ly-logout mp-reset font-14 center-text-toggle"><a href="{{{ a:logout }}}" class="t-post-content-link">Log Out</a></p>
+						</div>
+						
+						<div class="clearfix"></div>
+					</div>
+				
+				</div>
+				
+			</div>
+		
+		</div>
+		<!-- *** -->
+		
+	</div>
+
+</div>
+<!-- *** -->
+
+<!-- FL3: Search Interface -->
+<div class="ly-focus-layer width-full no-display" data-focus-layer="3">
+	
+	<div class="ly-card-deck center">
+		
+		<div class="width-full-mb-20" id="search-info">
+		
+			<div class="card ly-standard-border">
+			
+				<div class="width-full-mb-10">
+					<h3 class="mp-reset font-18">Searching</h3>
+				</div>
+				
+				<div class="width-full-mb-10">
+					<p class="mp-reset font-15">Plink's search feature allows you to search for hashtags or users by either their first name or username. To search, start the keyword with either of the below characters</p>
+				</div>
+				
+				<div class="width-full">
+					<ul class="mp-reset font-15">
+						<li>'#' for hashtags (#cats)</li>
+						<li>'@' for usernames (@smith)</li>
+						<li>No prefix for first names (John)</li>
+					</ul>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="width-full js-search-c">
+		
+		</div>
+		
+	</div>
+	
+</div>
+<!-- *** -->

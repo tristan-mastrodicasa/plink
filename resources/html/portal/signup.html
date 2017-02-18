@@ -1,0 +1,67 @@
+<form id="login-signup-portal">
+					
+	<div id="element-set-1">
+	
+		<div class="width-full-mb-10" id="f-c">
+			<input type="text" name="FirstName" placeholder="First Name" id="f" class="in-medium-text width-full border-box ly-standard-border">
+		</div>
+		
+		<span class="width-full-mb-10 t-error-text-publish ly-input-error" id="f-m"></span>
+		
+		<div class="width-full-mb-10">
+			<input type="text" name="Username" placeholder="Username" id="u" class="in-medium-text width-full border-box ly-standard-border">
+		</div>
+		
+		<span class="width-full-mb-10 t-error-text-publish ly-input-error" id="u-m"></span>
+		
+		<div class="width-full-mb-10" id="se-c">
+			<input type="text" name="SchoolEmail" placeholder="School Email" id="se" class="in-medium-text width-full border-box ly-standard-border">
+		</div>
+		
+		<span class="width-full-mb-10 t-error-text-publish ly-input-error" id="se-m"></span>
+		
+		<div class="right"> 
+			<input type="hidden" name="reference" value="{{{ ref }}}">
+			<input type="hidden" name="inputMethod" value="1">
+			<input type="hidden" name="step" value="0">
+			<input type="submit" value="Submit" id="sm" class="b-portal-sumbit ly-standard-border">
+		</div>
+		
+		<div class="ly-submit-neighbour">
+			<input type="password" name="Password" placeholder="Password" id="p" class="in-medium-text width-full border-box ly-standard-border">
+		</div>
+		
+	</div>
+	
+	<div id="element-set-2" class="no-display">
+	
+		<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response">asaskjdgasjkdagskjdga</textarea>
+		<input type="submit" value="Agree" id="ag" class="b-portal-sumbit ly-standard-border right">
+		
+		<div class="ly-submit-neighbour">
+			<span class="font-11">By clicking 'Agree' you accept our <a href="{{{ a:terms }}}" target="_blank">terms</a> and conditions</span>
+		</div>
+		
+	</div>
+	
+	<div id="element-set-3" class="no-display">
+	
+		<div class="width-full">
+			<p class="mp-reset center-text font-18">
+				<span class="block-display mb-10">Thank you for registering! To access Plink please visit the link sent to your email address (check spam folder)</span>
+				<span class="block-display mb-10"><a href="{{{ a:param-login }}}" class="t-invisible-link t-post-content-link" target="_blank">Param Email Login Portal</a></span>
+				<span class="block-display"><a href="{{{ a:general-email-login }}}" class="t-invisible-link t-post-content-link" target="_blank">General Login Portal</a></span>
+			</p>
+		</div>
+		
+	</div>
+	
+	<div id="element-set-4">
+		
+		<span class="width-full-mt-10 t-error-text-publish ly-input-error clearfix" id="p-m"></span>
+		
+	</div>
+	
+	<div class="clearfix"></div>
+
+</form>

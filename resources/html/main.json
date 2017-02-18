@@ -1,0 +1,62 @@
+{
+	"globals" : {
+		"home" : "",
+		"page-icon" : "resources/images/misc/favicon.png",
+		
+		"css-normal" : "resources/css/normalise.css",
+		"css-button" : "resources/css/button.css",
+		"css-input" : "resources/css/input.css",
+		"css-text" : "resources/css/text.css",
+		"css-media" : "resources/css/media.css",
+		"css-icon" : "resources/css/icon.css",
+		"css-ref" : "resources/css/ref.css",
+		"css-layout" : "resources/css/layout.css",
+		"css-mobile" : "resources/css/mobile.css",
+		
+		"js-globals" : "resources/javascript/globals.js",
+		"js-html" : "resources/javascript/html.js",
+		"js-animation" : "resources/javascript/animation.js",
+		"js-data-handler" : "resources/javascript/data-handler.js",
+		"js-applet" : "resources/javascript/applet.js",
+		
+		"js-mootools" : "resources/javascript/MooTools-Core-1.6.0.js",
+		"js-elastic" : "resources/javascript/jquery-elastic-source.js",
+		"js-linkify" : "resources/javascript/linkifyjs/linkify.js",
+		"js-linkify-string" : "resources/javascript/linkifyjs/linkify-string.js",
+		"js-linkify-hashtag" : "resources/javascript/linkifyjs/linkify-plugin-hashtag.js"
+	},
+	
+	"portal" : {
+		"forgot-pass" : "password-recovery/",
+		"about" : "about/",
+		"terms" : "terms/",
+		"release" : "release/",
+		
+		"main-white-logo" : "resources/images/plink-title-white.png",
+		"seo-opg-image" : "http://plink-net.com/resources/images/misc/plink-opg.png",
+		"seo-opg-image-sec" : "https://plink-net.com/resources/images/misc/plink-opg.png"
+	},
+	
+	"signup" : {
+		"param-login" : "https://paraparaumucollege.login.school.nz/gmail",
+		"general-email-login" : "http://pc4me.pcol.school.nz/login/index.php"
+	},
+	
+	"about" : {
+		"anon" : "resources/images/about/anon.png",
+		"timer" : "resources/images/about/timer.png",
+		"points" : "resources/images/about/points.png",
+		"webapp" : "resources/images/about/webapp.png",
+		"reposting" : "resources/images/about/repost.png",
+		"sharing" : "resources/images/about/sharing.png"
+	},
+	
+	"webapp" : {
+		"logo" : "resources/images/plink-title-small.png",
+		"logout" : "logout.php"
+	},
+	
+	"banned" : {
+		"larry" : "resources/images/misc/larry.png"
+	}
+}

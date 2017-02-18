@@ -1,0 +1,19 @@
+<script>
+	//--------------------------------------------------
+
+	/* Following javascript controls the login and sign up */ 
+	/* dynamic interface, if JS is not enabled then the */
+	/* website will not work, since the whole site or app is JS based */
+
+	//--------------------------------------------------
+
+	inputMethod = 1;
+
+	$("#ti").live('click', animation.portal.toggle);
+	$("#login-signup-portal").live('submit', function(){applet.portal.submit(); return false;});
+
+	$("#f").live('blur', function(){animation.error.hide('f');});
+	$("#u").live('blur', function(){animation.error.hide('u');});
+	$("#se").live('blur', function(){animation.error.hide('se');});
+	$("#p").live('blur', function(){animation.error.hide('p');});
+</script>

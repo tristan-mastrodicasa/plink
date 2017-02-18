@@ -1,0 +1,83 @@
+<script>
+
+sysTrack.mobile = dataHandler.mobileDetect();
+
+$(document).ready(function() { 
+	
+	// Set User Icon //
+	animation.profile.updatePropicIcon({tinyPic : sysTrack.profileUserPic});
+	
+	// Reset Hash //
+	window.location.hash = '#1:0';
+	window.onhashchange = applet.linkEngine.hash;
+	
+	////////////////////////////
+	// valHooks overrides jQuery to keep 
+	// whitespaces and return characters
+	// when returning textarea inputs
+	$.valHooks.textarea = {
+		get: function( elem ) {
+			return elem.value.replace(/\r?\n/g, "\r\n");
+		}
+	};
+	
+	var timeout;
+	
+	$(window).scroll(function() {
+		if(($(window).scrollTop() + $(window).height() > $(document).height() - 400) && sysTrack.scrollLoad == true && sysTrack.currentSubLayer != 5) {
+			
+			clearTimeout(timeout);
+			// Load posts for layers //
+			 timeout = setTimeout(function() {
+				dataHandler.scrollEngine(LAYER_TO_STRING[sysTrack.currentLayer + ':' + sysTrack.currentSubLayer], false);
+			 }, 75);
+		}
+	});
+	
+	// Populate main //
+	$(window).scroll();
+	
+	$(".js-textbox").elastic(); // Textarea resizing for input text
+	
+	// Assigns event listeners //
+	dataHandler.assignEventListener("click", "page-navigation", applet.linkEngine.callback);
+	dataHandler.assignEventListener("click", animation.post.classId[0], applet.post.endorse);
+	dataHandler.assignEventListener("click", animation.post.classId[1], applet.post.repost);
+	dataHandler.assignEventListener("click", "selectable", animation.publish.optionButton);
+	
+	// Assign Info Display for the Settings Inputs //
+	$("#u").live("focus", function(){animation.profile.settings.toggleInfo(this.id, true);});
+	$("#f").live("focus", function(){animation.profile.settings.toggleInfo(this.id, true);});
+	$("#be").live("focus", function(){animation.profile.settings.toggleInfo(this.id, true);});
+	
+	$("#u").live("blur", function(){animation.profile.settings.toggleInfo(this.id, false);});
+	$("#f").live("blur", function(){animation.profile.settings.toggleInfo(this.id, false);});
+	$("#be").live("blur", function(){animation.profile.settings.toggleInfo(this.id, false);});
+	
+	$("#u").live("blur", function(){animation.error.hide(this.id);});
+	$("#f").live("blur", function(){animation.error.hide(this.id);});
+	$("#be").live("blur", function(){animation.error.hide(this.id);});
+	$("#p").live("blur", function(){animation.error.hide(this.id);});
+	$("#p2").live("blur", function(){animation.error.hide(this.id);});
+	$("#po").live("blur", function(){animation.error.hide(this.id);});
+	
+	$("#profpic-select").live("click", function(){$('#propic-src').click();});
+	$("#propic-src").live("change", applet.profile.changePropic);
+	
+	$("#prof-conf").live("click", function(){applet.profile.confirmNewPropic(true);});
+	$("#prof-deny").live("click", function(){applet.profile.confirmNewPropic(false);});
+	
+	// The delete post popup //
+	$("#popm-del").live("mousedown", function(){ animation.popup.open('d', 0); });
+	
+	// Edit post text UI //
+	$("#popm-edit").live("mousedown", function(){ dataHandler.ajaxHelper("resources/php/handlers/seemore.php", {postid : sysTrack.pidToBeEdit, increment : 0 }, animation.post.edit.open) });
+	
+	// The report a post popup //
+	$("#popm-rep").live("mousedown", function(){ animation.popup.open('r', 0); });
+	
+	// The search icon for mobile //
+	$("#search-icon").live("click", animation.search.toggleBar);
+});
+
+</script>

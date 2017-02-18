@@ -1,0 +1,46 @@
+<div class="ly-top-nav-logo left">
+	<a href="#1:0" class="page-navigation">
+		<img src="{{{ a:logo }}}" alt="Page Banner" class="ic-top-nav-banner">
+	</a>
+</div>
+	
+<div class="ly-top-nav-link right">
+	
+	<div class="width-third height-full left">
+		<a href="#2:1" class="page-navigation" data-callback="profile">
+			<img src="" class="m-prof-pic-tiny ly-standard-border center" id="top-nav-propic">
+		</a>
+	</div>
+	
+	<div class="width-third height-full left">
+		<a href="#1:0" class="page-navigation">
+			<span class="ic-top-nav-link-icon center ic-home-link"></span>
+		</a>
+	</div>
+	
+	<div class="width-third height-full left">
+	
+		<div class="toggle-hide">
+			<a href="#2:5" class="page-navigation">
+				<span class="ic-top-nav-link-icon center ic-setting-link"></span>
+			</a>
+		</div>
+		
+		<div class="toggle-show no-display">
+			<span class="ic-top-nav-link-icon center ic-search-link" id="search-icon"></span>
+		</div>
+		
+	</div>
+
+</div>
+
+<form onsubmit="animation.search.query($('#top-nav-search').val()); return false;">
+
+	<div class="in-top-nav-search-c">
+	
+		<input type="text" name="search" placeholder="Search" class="in-top-nav-search font-15-5 width-height-full" id="top-nav-search">
+		<input type="submit" class="no-display">
+	
+	</div>
+	
+</form>

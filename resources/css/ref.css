@@ -1,0 +1,73 @@
+/* -----------------------------------
+	Reference CSS by Tristan Mastrodicasa
+	
+	ref.css
+	
+	This file provides quick class reference
+	to common CSS styles e.g. floating, clearfix
+----------------------------------- */
+
+/* Size References */
+
+.width-full { width: 100%; }
+.width-half { width: 50%; }
+.width-third { width: 33.333%; }
+.width-quarter { width: 25%; }
+
+.height-full { height: 100%; }
+.height-half { height: 50%; }
+.height-third { height: 33.333%; }
+.height-quarter { height: 25%; }
+
+.width-height-full { 
+	height: 100%;
+	width: 100%;
+}
+
+.border-box { 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Color References */
+
+.red { color: #FF0000; }
+.green { color: #00FF00; }
+.blue { color: #0000FF; }
+
+.bg-red { background-color: #FF0000; }
+.bg-green { background-color: #00FF00; }
+.bg-blue { background-color: #0000FF; }
+
+/* Format References */
+
+.right { float: right; }
+.left { float: left; }
+
+.clearfix { clear: both; }
+
+.center { 
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.no-display { display: none; }
+.block-display { display: block; }
+.inline-display { display: inline; }
+.inline-block-display { display: inline-block; }
+
+.margin-auto { 
+	margin-right: auto;
+	margin-left: auto;
+}
+.center-text {
+	text-align: center;
+}
+.left-text { 
+	text-align: left;
+}
+.right-text { 
+	text-align: right;
+}

@@ -1,0 +1,593 @@
+/* -----------------------------------
+	Layout CSS by Tristan Mastrodicasa
+
+	layout.css
+
+	This file helps with the layout CSS
+	for Plink
+----------------------------------- */
+
+/* Element Changes */
+
+body { 
+	padding: 0;
+	margin: 0;
+	
+	background-color: #FF751A;
+}
+
+/* Image Centering Styles */
+
+.ly-image-fill-center-c {
+	position: relative;
+	overflow: hidden;
+}
+.ly-image-fill-center-img {
+	position: absolute;
+	top: -9999px;
+	bottom: -9999px;
+	left: -9999px;
+	right: -9999px;
+	margin: auto;
+}
+
+/* Link Box For Link Copy */
+
+.ly-link-box { 
+	padding: 5px;
+	border: 1px dotted #000000;
+	background-color: #D9D9D9;
+}
+
+/* Border Styles */
+
+.ly-standard-border {
+	border: 1px solid #E6E6E6;
+	border-radius: 2px;
+}
+.ly-red-border {
+	border: 1px solid #FF0000;
+}
+.ly-open-graph-border {
+	border: 1px solid #bfbfbf;
+}
+.ly-border-grey {
+	border: 1px solid #AAB8C2;
+}
+.ly-border-bottom-flat {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.ly-border-top-flat {
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+.nb-right { border-right-width: 0; }
+.nb-left { border-left-width: 0; }
+.nb-top { border-top-width: 0; }
+.nb-bottom { border-bottom-width: 0; }
+
+/* Margin and Padding definitions */
+
+.mp-reset { 
+	margin: 0;
+	padding: 0;
+}
+.line-h-140 { 
+	line-height: 140%;
+}
+.padding-10 { 
+	padding: 10px;
+}
+.padding-25 {
+	padding: 25px;
+}
+.padding-15 { 
+	padding: 15px;
+}
+.mb-20 { 
+	margin-bottom: 20px;
+}
+.mb-10 { 
+	margin-bottom: 10px;
+}
+.mb-5 { 
+	margin-bottom: 5px;
+}
+.mb-15 { 
+	margin-bottom: 15px;
+}
+.mt-15 { 
+	margin-top: 15px;
+}
+.mt-5 { 
+	margin-top: 5px;
+}
+.mr-5 { 
+	margin-right: 5px;
+}
+
+.width-full-mb-10 { 
+	width: 100%;
+	margin-bottom: 10px;
+}
+.width-full-mt-10 { 
+	width: 100%;
+	margin-top: 10px;
+}
+.width-full-mb-15 { 
+	width: 100%;
+	margin-bottom: 15px;
+}
+.width-full-mb-20 { 
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.width-half-full-toggle { 
+	width: 50%;
+}
+.width-90 { 
+	width: 90%;
+}
+
+.max-height-full {
+	max-height: 100%;
+}
+
+/* Generic Layout Styles */
+
+.ly-max-width-100 { 
+	max-width: 100%;
+}
+.ly-max-width-95 { 
+	max-width: 95%;
+}
+.ly-max-width-80 { 
+	max-width: 80%;
+}
+
+.ly-max-height-100 { 
+	max-height: 100%;
+}
+
+/* Portal Layouts */
+
+.ly-middle-screen { 
+	margin-top: 7.5%;
+	margin-top: 15vh;
+}
+.ly-middle-top-screen { 
+	margin-top: 3.5%;
+	margin-top: 7vh;
+}
+.ly-input-error { 
+	display: none;
+	margin-left: 5px;
+}
+.ly-submit-neighbour { 
+	margin-right: 100px;
+}
+.ly-footer-links * { 
+	display: inline-block;
+	margin: 0 7px 0 7px;
+	word-break: keep-all;
+	
+	color: #000000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.ly-about-image {
+	width: 150px;
+	height: 150px;
+	padding-bottom: 15px;
+}
+.ly-about-text-right {
+	margin-right: 160px;
+}
+.ly-about-text-left {
+	margin-left: 160px;
+}
+.ly-about-text {
+	height: 100%;
+	padding-bottom: 15px;
+	overflow: hidden;
+}
+.ly-about-text p {
+	font-size: 18px;
+}
+
+/* About Timer */
+/* https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/ */
+/* Modified to fit in with the about page */
+
+#clockdiv{
+	width: 100%;
+	font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
+}
+
+#clockdiv > div{
+	width: 22%;
+	padding: 15px 0 15px 0;
+	border-radius: 3px;
+	background: rgba(0,0,0,0.50);
+	display: inline-block;
+}
+
+#clockdiv div > span{
+	width: 80%;
+	padding: 15px 0 15px 0;
+	border-radius: 3px;
+	background: rgba(0,0,0,0.50);
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+/* Popup Layouts */
+
+.ly-popup-overlay { 
+	position: fixed;
+	z-index: 5;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Popup Menu Layout */
+
+.ly-popup-menu {
+	position: absolute;
+	width: 75px;
+	
+	background-color: #FEFEFE;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.50);
+	border: 1px #E6E6E6 solid;
+}
+.ly-popup-menu-option {
+	padding: 4px 0 4px 0;
+	cursor: pointer;
+}
+.ly-popup-menu-option:hover {
+	background-color: #E6E6E6;
+}
+
+/* Top Navigation Layout */
+
+.ly-top-nav { 
+	height: 64px;
+	position: fixed;
+	z-index: 4;
+	
+	background-color: #FFFFFF;
+	box-shadow: 0px 1px 5px #888888;
+}
+.ly-top-mobile-search {
+	position: fixed;
+	z-index: 4;
+	height: 50px;
+	margin-top: 59px;
+	
+	background-color: #FFFFFF;
+}
+.ly-top-nav-c { 
+	width: 65%;
+	height: 38px;
+	max-width: 1000px;
+	min-width: 600px;
+	margin-top: 13px;
+}
+.ly-top-nav-c div { 
+	height: 38px;
+}
+.ly-top-nav-logo {
+	margin-right: 40px;
+	margin-left: 40px;
+}
+.ly-top-nav-link {
+	width: 140px;
+	margin: 0 25px 0 25px;
+}
+.ly-top-nav-link span {
+	margin-top: 6px;
+}
+.ly-top-nav-link img {
+	margin-top: 4px;
+}
+
+/* Focus Layer Layouts */
+
+.ly-focus-layer {
+	z-index: -1;
+	position: absolute;
+	padding-top: 84px;
+}
+.ly-card-deck { 
+	width: 100%;
+	max-width: 524px;
+}
+.ly-card-deck-small { 
+	width: 100%;
+	max-width: 350px;
+}
+.ly-card-deck-large { 
+	width: 100%;
+	max-width: 600px;
+}
+
+/* Card Designs */
+
+.card {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	overflow: hidden;
+	
+	background-color: #FFFFFF;
+}
+
+/* Publish UI Layouts */
+
+.ly-publish-options-c {
+	min-height: 20px;
+	cursor: pointer;
+}
+.ly-publish-options-c > img {
+	display: block;
+	margin: 0 auto;
+}
+.ly-publish-options-c > span {
+	display: block;
+	width: 80px;
+	height: 20px;
+	margin: 0 auto;
+}
+.ly-publish-ui { 
+	background-color: #FFFFFF;
+	border-radius: 2px;
+}
+.ly-text-area { 
+	min-height: 60px;
+}
+.ly-picture-video { 
+	padding-top: 0px;
+	padding-bottom: 10px;
+	overflow: hidden;
+}
+.ly-publish-char-counter { 
+	line-height: 180%;
+}
+.ly-publish-error { 
+	background-color: #FFE6E6;
+}
+.ly-publish-error > p { 
+	margin: 0;
+	padding: 10px;
+}
+
+/* Publish Topic and Post bar */
+
+.ly-publish-half {
+	width: 50%;
+	height: 30px;
+	float: right;
+}
+.ly-publish-half > * {
+	height: 30px;
+}
+.ly-publish-half > span {
+	margin-right: 10px;
+}
+.ly-publish-half > img {
+	margin-right: 5px;
+}
+
+/* Post Layouts */
+
+.ly-poster-details {
+	padding: 5px;
+	padding-top: 2px;
+	margin-left: 50px;
+	overflow: hidden;
+}
+.ly-poster-details > span {
+	display: block;
+}
+.ly-poster-details > span > span {
+	display: inline;
+}
+.ly-poster-lines { 
+	padding-top:3px;
+}
+.ly-poster-repost {
+	display: inline-block;
+	position: relative;
+	bottom: -2px;
+}
+
+/* Open Graph Layouts */
+
+.ly-open-graph-f {
+	float: left;
+	overflow: hidden;
+}
+.ly-open-graph-f-d { 
+	height: 145px;
+	padding: 10px;
+	margin-left: 167px;
+	overflow: hidden;
+	
+	border-left-width: 0px;
+}
+.ly-open-graph-b {
+	overflow: hidden;
+}
+.ly-open-graph-b-img { 
+	height: 200px;
+	
+	border-bottom-width: 0px;
+}
+.ly-open-graph-f-img {
+	height: 165px;
+	width: 165px;
+}
+
+/* Post Actions */
+
+.ly-post-action { 
+	max-width: 100px;
+	min-width: 70px;
+	height: 23px;
+}
+
+/* Post Comment Layouts */
+
+.ly-comment-color {
+	background-color: #E0E2EB;
+}
+.ly-comment-written { 
+	margin-left: 50px;
+}
+.ly-comment-written-input { 
+	margin-right: 38px;
+	overflow: hidden;
+}
+.ly-comment-char-counter { 
+	width: 40px;
+	height: 38px;
+}
+.ly-comment-char-counter > span { 
+	line-height: 220%;
+}
+.ly-comment-node {
+	overflow: hidden;
+}
+.ly-comment-delete:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* Profile Card */
+
+.ly-profile { 
+	width: 100%;
+	margin-top: 80px;
+	padding: 10px;
+	
+	text-align: center;
+	background-color: #FFFFFF;
+}
+.ly-profile-prof-pic { 
+	margin-top: -90px;
+}
+.ly-prof-overlay {
+	position: relative;
+	z-index: 2;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.ly-prof-confirm {
+	position: relative;
+	top: 95px;
+	height: 35px;
+	width:35px;
+	cursor: pointer;
+	border-radius: 18px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Profile Level Display */
+
+.ly-xp-display { 
+	margin-left: 70px;
+	padding-top: 5px;
+}
+.ly-xp-display > span { 
+	padding-bottom: 5px;
+}
+
+/* Profile Front End Stats */
+
+.ly-fe-profile-info { 
+	width: 224px;
+	float: left;
+	padding-left: 5px;
+}
+.ly-fe-profile-stats { 
+	width: 271px;
+	padding-left: 15px;
+	float: left;
+	border-left: 1px solid #AAB8C2;
+}
+.ly-fe-profile-info-line { 
+	padding: 10px 0 10px 0;
+}
+.ly-fe-seperator { 
+	width: 70%;
+	display: none;
+}
+.ly-stat-lines { 
+	padding-top: 3px;
+}
+.ly-stat-lines span { 
+	height: 25px;
+}
+.ly-stat-desc { 
+	padding-top: 1px;
+	margin: 0 70px 0 30px;
+}
+.ly-stat-num { 
+	width: 70px;
+	padding-top: 3px;
+}
+
+/* Profile Analysis */
+
+.ly-statlet { 
+	width: 25%;
+}
+
+/* Subscription Layouts */
+
+.ly-sub-line { 
+	margin-right: 50px;
+}
+.ly-unsub-block { 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 50px;
+	width: 50px;
+	padding: 17.5px;
+	float: right;
+}
+
+/* Settings */
+
+.ly-set-line { 
+	margin-bottom: 15px;
+	float: left;
+}
+div.ly-set-button { 
+	/*width: 159px;*/
+	width: 119px;
+	margin-right: 10%;
+	float: right;
+}
+img.ly-set-button { 
+	margin-left: 10px;
+}
+button.ly-set-button { 
+	width: 105px;
+}
+.ly-logout {
+	padding-top: 7px;
+}

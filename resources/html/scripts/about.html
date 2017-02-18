@@ -1,0 +1,15 @@
+<script>
+	var launch = "Mon, 20 Feb 2017 17:30:00 +1300";
+	
+	var t = Date.parse(launch) - Date.parse(new Date());
+	
+	$("#launch-date").show();
+	
+	if (t > 0) {
+		//$("#clock-c").show();
+		//$("#launch-date").show();
+	}
+	
+	var deadline = new Date(Date.parse(new Date(launch)));
+	animation.portal.countdown.initializeClock('clockdiv', deadline);
+</script>

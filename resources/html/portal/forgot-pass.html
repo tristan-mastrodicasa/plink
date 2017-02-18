@@ -1,0 +1,29 @@
+<form id="pass-recovery-form">
+						
+	<div class="width-full-mb-10 border-box ly-standard-border {{{ new-pass-hide }}}" id="pass-new">
+		<input type="password" placeholder="Password" id="p" class="in-medium-text width-full border-box">
+	</div>
+	
+	<input type="submit" value="Check" id="ch" class="b-portal-sumbit ly-standard-border right">
+	
+	<div class="ly-submit-neighbour ly-standard-border {{{ user-hide }}}" id="username">
+		<input type="text" placeholder="Username" id="un" class="in-medium-text width-full border-box">
+	</div>
+	
+	<div class="ly-submit-neighbour ly-standard-border {{{ retype-pass-hide }}}" id="pass-retype">
+		<input type="password" placeholder="Retype Password" id="p2" class="in-medium-text width-full border-box">
+	</div>
+	
+	<span class="width-full-mt-10 t-error-text-publish ly-input-error clearfix no-display" id="pass-new-m"></span>
+	
+	<div class="width-full no-display" id="pass-recov-message">
+		<p class="mp-reset center-text font-18">If the username matches a user in the userbase then instructions will be sent to your backup email (check spam folder)</p>
+	</div>
+	
+	<input type="hidden" id="step" value="{{{ step }}}">
+	<input type="hidden" id="userid" value="{{{ userid }}}">
+	<input type="hidden" id="verify" value="{{{ code }}}">
+	
+	<div class="clearfix"></div>
+	
+</form>

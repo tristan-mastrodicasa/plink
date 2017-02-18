@@ -1,0 +1,122 @@
+/* -----------------------------------
+	Text CSS by Tristan Mastrodicasa
+
+	text.css
+
+	This file standardises the text styles
+	and sizes for Plink. This file also
+	deals with external fonts
+----------------------------------- */
+
+/* Standard Text */
+
+html {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Invisible Link */
+
+.t-invisible-link { 
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+/* Error Handling Text */
+
+.t-error-text-publish { 
+	font-size: 15px;
+	color: #E60000;
+}
+.t-error-text-setting { 
+	font-size: 12px;
+	color: #E60000;
+}
+.t-info-text-setting { 
+	font-size: 12px;
+	color: #0000FF;
+}
+
+/* Character Counter */
+
+.t-char-counter {
+	font-size: 18px;
+	color: #AAB8C2;
+}
+
+/* Post Details */
+
+.t-poster-first-name { 
+	font-size: 14.5px;
+	font-weight: bold;
+}
+.t-poster-other { 
+	font-size: 14.5px;
+	color: #8899A6;
+}
+
+/* Post Content Text */
+
+.t-post-content-text { 
+	font-size: 15.5px;
+	line-height: 20px;
+	word-wrap: break-word;
+}
+.t-post-content-link { 
+	color: #008AE6;
+	text-decoration: none;
+}
+.t-see-more {
+	display: inline-block;
+	margin-left: 4px;
+	color: #007ACC;
+	cursor: pointer;
+}
+.t-see-more:hover { text-decoration: none; }
+
+/* Open Graph Text */
+
+.t-open-graph-t {
+	font-family: Georgia, serif;
+	font-size: 18px;
+}
+.t-open-graph-d {
+	font-family: helvetica, arial, sans-serif;
+	font-size: 15px;
+	color: #808080;
+}
+
+/* Comment Text */
+
+.t-see-more-comments { 
+	font-size: 13px;
+	color: #355797;
+	cursor: pointer;
+}
+.t-grey-13 { 
+	font-size: 13px;
+	color: #808080;
+}
+
+/* Profile Level Text*/
+
+.t-profile-level { 
+	font-size: 19px; /* Changes in mobile.css */
+}
+
+/* Generic Font Sizes */
+
+.font-10 { font-size: 10px; }
+.font-11 { font-size: 11px; }
+.font-12 { font-size: 12px; }
+.font-13 { font-size: 13px; }
+.font-13-5 { font-size: 13.5px; }
+.font-14 { font-size: 14px; }
+.font-14-5 { font-size: 14.5px; }
+.font-15 { font-size: 15px }
+.font-15-5 { font-size: 15.5px }
+.font-17 { font-size: 17px; }
+.font-18 { font-size: 18px; }
+.font-20 { font-size: 20px; }
+.font-23 { font-size: 23px; }
+.font-30 { font-size: 30px; }

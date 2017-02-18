@@ -1,0 +1,171 @@
+/* -----------------------------------
+	Mobile CSS by Tristan Mastrodicasa
+	
+	ref.css
+	
+	This file helps the layout adapt to 
+	small screen sizes (mobile)
+----------------------------------- */
+
+@media screen and (max-width: 600px) {
+	
+	/* Toggle for top nav search icon */
+	
+	.toggle-hide {
+		display: none;
+	}
+	.toggle-show {
+		display: block;
+	}
+	
+	/* Top Navigation */
+	
+	.in-top-nav-search-c { 
+		display: none;
+	}
+	
+	.ly-top-nav { 
+		height: 59px;
+	}
+	
+	.ly-top-nav-c { 
+		width: 100%;
+		max-width: initial;
+		min-width: initial;
+		margin-top: 10.5px;
+	}
+	
+	.ly-top-nav-logo { 
+		margin: 0 0 0 25px;
+	}
+	
+	.ly-top-nav-link { 
+		margin: 0 25px 0 0;
+	}
+	
+	.ic-top-nav-banner { 
+		max-height: 32px;
+		margin-top: 2px;
+	}
+}
+
+@media screen and (max-width: 528px) {
+	
+	/* Generic Layout Toggles */
+	
+	.center-toggle { 
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		float: none;
+	}
+	.mb-20-toggle { 
+		margin-bottom: 20px;
+	}
+	.pb-2-toggle { 
+		padding-bottom: 2px;
+	}
+	.width-half-full-toggle { 
+		width: 100%;
+	}
+	.center-text-toggle {
+		text-align: center;
+	}
+	
+	/* Layouts */
+	
+	.card { 
+		border-radius: 0px;
+		border-width: 0px;
+		padding: 8px 5px 8px 5px;
+	}
+	
+	.ly-profile { 
+		border-radius: 0px;
+		border-width: 0px;
+	}
+	
+	.ly-publish-options-c > img { 
+		width: 85%;
+	}
+	
+	.ly-publish-ui { 
+		border-radius: 0px;
+	}
+	
+	/* Profile Level Text / Layout */
+	
+	.t-profile-level { 
+		font-size: 15.5px;
+	}
+	
+	.ly-xp-display { 
+		margin-left: 70px;
+		padding-top: 7px;
+	}
+	
+	.ly-xp-display > span { 
+		padding-bottom: 7px;
+	}
+	
+	.ly-fe-profile-info { 
+		width: 100%;
+		float: none;
+		margin: 0 auto;
+		padding: 0;
+		text-align: center;
+	}
+	.ly-fe-profile-stats { 
+		border-width: 0;
+		padding: 10px 0 0 0;
+		margin: 0 auto;
+		float: none;
+		
+		position: relative;
+		right: -13px;
+	}
+	.ly-fe-seperator { 
+		display: block;
+	}
+	
+	/* Profile Anaylsis */
+	
+	.ly-statlet { 
+		width: 50%;
+	}
+	
+	/* Settings */
+	
+	.ly-set-line { 
+		float: none;
+		text-align: center;
+	}
+	div.ly-set-button { 
+		margin: 0 auto;
+		float: none;
+	}
+	.ly-setting-info {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	.ic-info-tiny {
+		display: none;
+	}
+	.ly-logout {
+		padding-top: 13px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	
+	.center-toggle-400 { 
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		float: none;
+	}
+	
+	.center-text-toggle-400 {
+		text-align: center;
+	}
+}
