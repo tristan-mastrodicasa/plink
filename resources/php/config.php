@@ -21,6 +21,9 @@ define("REPOST_XP", 3);
 define("SUBSCRIBE_XP", 5);
 define("ADMIRATION_XP", 20);
 
+// Toggle when testing for server or local machine //
+define("PRODUCTION", false);
+
 // $URL_REGEX = "/((http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/i"
 
 $ACCEPTED_DOMAINS = array("paraparaumucollege.school.nz", "pcol.school.nz", "kapiticollege.school.nz", "kc.school.nz", "otakicollege.school.nz");

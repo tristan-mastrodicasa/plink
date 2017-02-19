@@ -34,7 +34,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 		$output->publish_output_error($verify->post(0, array($_POST['type'], $_POST['topic'])));
 		
 		// Check if user has posted to much stuff (spam protection) //
-		//if($verify->post_spam_protection($_SESSION['uid'])) $output->publish_output_error(9);
+		if (PRODUCTION) {
+			if($verify->post_spam_protection($_SESSION['uid'])) $output->publish_output_error(9);
+		}
 		
 		// Verify Input //
 		switch ($type) {

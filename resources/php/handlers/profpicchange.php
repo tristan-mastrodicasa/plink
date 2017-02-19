@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	if(array_key_exists("imageSrc", $_FILES)) {
 		$response = array("error" => 0);
 		$response['error'] = $verify->image($_FILES['imageSrc']);
-		
+		echo $response['error'];
 		if($response['error'] == 0) {
 			
 			$image = new Image;

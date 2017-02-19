@@ -226,7 +226,7 @@ var animation = {
 				sysTrack.refUsername = data.username;
 				animation.popup.open('l', data.level);
 			} else if (data.message == 'b') {
-				window.location.replace(DOMAIN + "banned.php?id=" + sysTrack.profileUserId);
+				window.location.replace(DOMAIN + "banned/" + sysTrack.profileUserId);
 			}
 			
 		},
@@ -251,7 +251,7 @@ var animation = {
 					
 					if(media == 5 || media == 10 || media == 15 || media == 25) {
 						$("#pop-share-link-c").show();
-						$("#pop-share-link").text(DOMAIN + "index.php?ref=" + sysTrack.refUsername);
+						$("#pop-share-link").text(DOMAIN + "index/" + sysTrack.refUsername);
 						var message = "You have progressed to level " + media + "<br>Want to level up faster? Share this link to gain influence";
 					} else {
 						$("#pop-share-link-c").hide();
@@ -491,7 +491,7 @@ var animation = {
 				else animation.portal.currentStep(0);
 			} else {
 				if(data.p == 'b') {
-					window.location.replace(DOMAIN + "banned.php?id=" + data.uid);
+					window.location.replace(DOMAIN + "banned/" + data.uid);
 				} else if(data.p != 0) {
 					animation.error.show('p', data.p);
 					animation.error.show('u');

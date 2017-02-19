@@ -314,13 +314,17 @@ class Misc {
 		 * This function checks to see if the launch date has been surpassed,
 		 * if it hasen't than it will redirect the user to the about page
 		 * ---------------------------------------------------------- */
-		 
-		 // Demo Code //
-		if(array_key_exists('var_one', $_GET) && $_GET['var_one'] == "aaabbbccc123") {}
-		else {
-			if($this->diff_in_seconds_now("2017-02-20", "17:29:42") < 0) {
-				header("Location: " . SERVER_URL . "about/");
+		
+		if (PRODUCTION) {
+			
+			// Demo Code //
+			if(array_key_exists('var_one', $_GET) && $_GET['var_one'] == "aaabbbccc123") {}
+			else {
+				if($this->diff_in_seconds_now("2017-02-20", "17:29:42") < 0) {
+					header("Location: " . SERVER_URL . "about/");
+				}
 			}
+			
 		}
 	}
 	
@@ -358,15 +362,19 @@ class Misc {
 	
 	public function establish_secure () {
 			
-			/* -----------------------------------------------------------
-			 * This function will automatically set the protocol to https
-			 * ---------------------------------------------------------- */
+		/* -----------------------------------------------------------
+		 * This function will automatically set the protocol to https
+		 * ---------------------------------------------------------- */
+		
+		if (PRODUCTION) {
 			
-			/*if ($_SERVER['HTTPS'] != "on") {
+			if ($_SERVER['HTTPS'] != "on") {
 				$url = "https://". $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 				header("Location: $url");
 				exit;
-			}*/
+			}
+			
+		}
 	}
 }
 

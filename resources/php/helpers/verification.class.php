@@ -170,27 +170,23 @@ class Verify {
 			
 			$conn = new mysqli(SERVER_NAME, USERNAME, PASSWORD, DATABASE);
 			
-			$stmt = $conn->prepare("SELECT date, time FROM activity_data WHERE cuserid = ? AND action = 8 ORDER BY id DESC LIMIT 9"); // Check to see if vars can be replaced with '?'
+			$misc = new Misc;
+			
+			$nothingBefore = $misc->date_calculator("P1D");
+			
+			$stmt = $conn->prepare("SELECT date, time FROM activity_data WHERE cuserid = ? AND action = 8 AND TIMESTAMP(date, time) > '$nothingBefore' ORDER BY id DESC LIMIT 9"); // Check to see if vars can be replaced with '?'
 			$stmt->bind_param("i", $userid);
 			$stmt->execute();
 			$stmt->bind_result($date, $time);
 			$stmt->store_result();
 			
-			if($stmt->num_rows >= 8){
-				while($stmt->fetch()) {
-					
-					$misc = new Misc;
-					if(!$misc->expiry_checker($date, $time, 1)) {
-						$stmt->close();
-						$conn->close();
-						return True;
-					}
-					break;
-				}
-			}
+			$rows = $stmt->num_rows;
 			
 			$stmt->close();
 			$conn->close();
+			
+			if($rows >= 8) return true;
+			else return false;
 		
 	}
 	
@@ -379,10 +375,6 @@ class Verify {
 		 * 4. Only accept .png .jpg and .gif
 		 * ---------------------------------------------------------- */
 		
-		$src = imagecreatefromstring(file_get_contents($imageSrc['tmp_name']));
-		if($src === False) return 7;
-		else imagedestroy($src);
-		
 		$check = getimagesize($imageSrc['tmp_name']);
 		
 		// Check image dimensions //
@@ -394,6 +386,10 @@ class Verify {
 		
 		// Check image size //
 		if($imageSrc['size'] > 10000000) return 12;
+		
+		$src = imagecreatefromstring(file_get_contents($imageSrc['tmp_name']));
+		if($src === False) return 7;
+		else imagedestroy($src);
 		
 		$imageType = pathinfo(basename($imageSrc['name']), PATHINFO_EXTENSION);
 		
@@ -472,10 +468,13 @@ class Verify {
 		 * This function verifies if the user is not a robot
 		 * ---------------------------------------------------------- */
 		
+		// Skip google captcha if working in development //
+		if (!PRODUCTION) return true;
+		
 		$url = "https://www.google.com/recaptcha/api/siteverify";
 		$data = array('secret' => '6LdePRUUAAAAADO8XWhLIalwjC0ci5bFKYhvoYLX', 'response' => $value);
 
-		// use key 'http' even if you send the request to https://...
+		// use key 'http' even if you send the request to https://... //
 		$options = array(
 			'http' => array(
 				'header'  => "Content-type: application/x-www-form-urlencoded\r\n",

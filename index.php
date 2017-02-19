@@ -51,7 +51,10 @@
 		if ($page != "index" && $page != "about" && $page != "home") {
 			$scissors->paste(array("meta/main-css.html", "meta/seo-lite.html"), "head");
 		} else if ($page != "home") {
-			$scissors->paste(array("meta/main-css.html", "meta/seo-lite.html", "meta/seo.html"), "head");
+			
+			if ($page == "index" && PRODUCTION) $scissors->paste(array("meta/main-css.html", "meta/seo-lite.html", "meta/seo.html", "<script src='https://www.google.com/recaptcha/api.js'></script>"), "head");
+			else $scissors->paste(array("meta/main-css.html", "meta/seo-lite.html", "meta/seo.html"), "head");
+			
 		} else {
 			
 			// The main app's scripts are in it's <head> (therefore in the <head> constructor) //
@@ -93,16 +96,20 @@
 				$verify = new Verify;
 				$ref = '';
 				
-				if(array_key_exists("ref", $_GET)) {
+				if(array_key_exists("var_one", $_GET)) {
 					
 					// Assigning the Referenced User to the hidden input method //
-					if($verify->user($_GET['ref'])) $ref = $_GET['ref'];
+					if($verify->user($_GET['var_one'])) $ref = $_GET['var_one'];
 					
 				}
 				
 				// Enter ref into the HTML //
 				$scissors->paste(array("scripts/javascript-main.html", "scripts/signup.html"), "scripts");
 				$scissors->paste("portal/signup.html", "card-content");
+				
+				if (PRODUCTION) $scissors->paste('<div class="g-recaptcha mb-10" data-sitekey="6LdePRUUAAAAANFgkSbkWkvmGvrEbT7IdzYhk4SM"></div>', "captcha");
+				else $scissors->paste('<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response">asaskjdgasjkdagskjdga</textarea>', "captcha");
+				
 				$scissors->paste($ref, "ref");
 				
 				$scissors->update_urls("main.json", "signup");

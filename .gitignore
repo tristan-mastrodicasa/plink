@@ -53,6 +53,14 @@ plink.phprj
 plink.workspace
 resources/javascript/minified/
 resources/css/minified/
+
+# Html Import Staging
+resources/html/staged/
+
 resources/javascript/linkifyjs/
+resources/javascript/staging/
+resources/javascript/closure-compiler-v20170124.jar
+resources/javascript/compile-main.bat
+resources/javascript/compile-utils.bat
 resources/php/helpers/php-mailer/
 workshop/
