@@ -320,7 +320,7 @@ class Misc {
 			// Demo Code //
 			if(array_key_exists('var_one', $_GET) && $_GET['var_one'] == "aaabbbccc123") {}
 			else {
-				if($this->diff_in_seconds_now("2017-02-20", "17:29:42") < 0) {
+				if($this->diff_in_seconds_now("2017-03-10", "17:29:42") < 0) {
 					header("Location: " . SERVER_URL . "about/");
 				}
 			}
