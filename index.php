@@ -107,7 +107,7 @@
 				$scissors->paste(array("scripts/javascript-main.html", "scripts/signup.html"), "scripts");
 				$scissors->paste("portal/signup.html", "card-content");
 				
-				if (PRODUCTION) $scissors->paste('<div class="g-recaptcha mb-10" data-sitekey="6LdePRUUAAAAANFgkSbkWkvmGvrEbT7IdzYhk4SM"></div>', "captcha");
+				if (PRODUCTION) $scissors->paste('<div class="g-recaptcha mb-10" data-sitekey="lolitshidden"></div>', "captcha");
 				else $scissors->paste('<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response">asaskjdgasjkdagskjdga</textarea>', "captcha");
 				
 				$scissors->paste($ref, "ref");
